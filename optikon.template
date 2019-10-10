@@ -1,0 +1,21 @@
+class Optikon < Formula
+
+  desc "Create vega and vega-lite visualizations from the command-line."
+  homepage "https://github.com/stathissideris/optikon"
+  version "${VERSION}"
+
+  if OS.linux?
+    url "https://github.com/stathissideris/optikon/releases/download/v${VERSION}/optikon-${VERSION}-linux-amd64.zip"
+    sha256 "${LINUX_SHA}"
+  else
+    url "https://github.com/stathissideris/optikon/releases/download/v${VERSION}/optikon-${VERSION}-macos-amd64.zip"
+    sha256 "${MACOS_SHA}"
+  end
+
+  bottle :unneeded
+
+  def install
+    bin.install "optikon"
+  end
+
+end
